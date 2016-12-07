@@ -1,6 +1,7 @@
 # --------------------------------------------------------------------
 # | 
 # | CONFIG: /etc/nginx/nginx.conf
+# |         /etc/nginx/sites-enabled/
 # |
 # |
 # |
@@ -23,8 +24,3 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 EXPOSE 80 443
 
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
-
-# ----------------------------------------------------------------
-
-ONBUILD ADD sites-enabled/ /etc/nginx/sites-enabled/
-ONBUILD ADD app/ /app/
