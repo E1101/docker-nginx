@@ -5,7 +5,8 @@
 # |
 # |
 # |
-FROM ubuntu
+FROM ubuntu:latest
+
 MAINTAINER Payam Naderi <naderi.payam@gmail.com>
 
 RUN apt-get update && \
