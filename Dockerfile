@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------
-# |
-# |
+# | 
+# | CONFIG: /etc/nginx/nginx.conf
 # |
 # |
 # |
@@ -12,12 +12,10 @@ RUN apt-get update && \
     apt-get install -y nginx && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-
+    
 EXPOSE 80
 
-CMD ["/usr/sbin/nginx"]
+CMD ["/usr/sbin/nginx", "-D", "daemon off;"]
 
 
 # ----------------------------------------------------------------
